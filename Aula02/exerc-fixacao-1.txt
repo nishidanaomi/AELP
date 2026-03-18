@@ -1,0 +1,28 @@
+Três senhoras – dona Laranja, dona Rosa e dona Violeta – passeavam
+pelo parque quando dona Rosa disse:
+▪ Não é curioso que estejamos usando vestidos de cores laranja, rosa e
+violeta, embora nenhuma de nós esteja usando um vestido de cor
+igual ao seu próprio nome?
+▪ Uma simples coincidência – respondeu a senhora com o vestido
+violeta.
+Qual a cor do vestido de cada senhora?
+
+(entrada)
+
+Senhoras: Dona Laranja; Dona Rosa; Dona Violeta;
+
+Cores dos vestidos: laranja; rosa; violeta;
+
+(processamento)
+
+Se: Dona Laranja diferente de laranja; Dona Rosa diferente de rosa; Dona Violeta diferente de violeta;
+Se: Dona Rosa disse que cores diferentes dos nomes;
+Se: Senhora de violeta responde que é coincidência;
+
+Então:  Dona Rosa não usa cor violeta;
+	
+(saída)
+
+Dona Rosa = vestido laranja;
+Dona Laranja = vestido violeta;
+Dona Violeta = vestido rosa;

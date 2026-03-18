@@ -1,0 +1,22 @@
+Elabore um algoritmo que mova três discos de uma Torre de Hanói,
+que consiste em três hastes (A, B e C), uma das quais serve de suporte
+para três discos de tamanhos diferentes (1, 2 e 3), os menores sobre os
+maiores. Pode-se mover um disco de cada vez para qualquer haste,
+contanto que nunca seja colocado um disco maior sobre um menor. O
+objetivo é transferir os três discos para a outra haste.
+
+(entrada)
+haste = "hasteA"; "hasteB"; "hasteC";
+disco = "disco1"; "disco2"; "disco3";
+disco1 < disco2 < disco3;
+Todos estão na hasteA, posicionados com disco menor pro maior. Então:
+(processamento)
+mover disco1 da hasteA para hasteB;
+mover disco2 da hasteA para hasteC;
+mover disco1 da hasteB para hasteC;
+mover disco3 da hasteA para hasteB;
+mover disco1 da hasteC para hasteA;
+mover disco2 da hasteC para hasteB;
+mover disco1 da hasteA para hasteB;
+(saida)
+disco do menor pro maior na hasteB.
