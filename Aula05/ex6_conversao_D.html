@@ -1,0 +1,10 @@
+<!-- Elaborar um programa que leia o valor de um jantar. Calcule e informe o valor da taxa do garçom (10%) e o valor total a ser pago. -->
+
+<meta charset="UTF-8">
+<script>
+    const entrada = prompt("O valor do jantar é de R$:");
+    const jantar = Number(entrada.replace(`,`,`.`));
+    const garcom = jantar * 0.1;
+    const total = jantar + garcom;
+    alert("Somando a taxa do garçom de R$" + garcom.toFixed(2) + " e o valor do jantar, o total a ser pago será de R$" + total.toFixed(2));
+</script>
