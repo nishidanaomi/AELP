@@ -1,0 +1,15 @@
+<!-- Elaborar um programa que leia um número. Calcule e informe os seus vizinhos, ou seja, os números anterior e posterior. -->
+
+<meta charset="UTF-8">
+<script>
+    const entrada = prompt("Digite um número:");
+    const num = Number(entrada.replace(',','.'));
+    if (isNaN(num)){
+        alert("Ops! Você não digitou um número válido.");
+    } else {
+        const numAnterior = num - 1;
+    const numPosterior = num + 1;
+    alert("Os números vizinhos de " + num.toLocaleString('pt-BR') + " são " + numAnterior.toLocaleString('pt-BR') + " e " + numPosterior.toLocaleString('pt-BR') + "!");
+    }
+    
+</script>

@@ -1,0 +1,19 @@
+<!-- Elaborar um programa para uma pizzaria, que leia o valor total de uma conta e quantos clientes vão pagá-la. Calcule e informe o valor a ser pago por cada cliente. -->
+
+<meta charset="UTF-8">
+<script>
+    const valorTotal = prompt("Digite o valor total: R$");
+    const valorConta = Number(valorTotal.replace(',','.'));
+        if (isNaN(valorConta) || valorConta<=0) {
+        alert("Erro. Atualize a página e digite novamente o valor em número.");
+        } else {
+    const numClientes = prompt("Digite o número de clientes:"); 
+    
+        if (isNaN(numClientes) || numClientes<1 || !Number.isInteger(Number(numClientes))) {
+        alert("Algo saiu errado. Atualize a página e digite um número de clientes válido.");
+        } else {
+        const valorPorCliente = valorConta / numClientes;
+        alert("O valor a ser pago por cliente é de R$" + valorPorCliente.toLocaleString('pt-BR', {minimumFractionDigits: 2}) + ".");
+    }
+    }
+</script>
