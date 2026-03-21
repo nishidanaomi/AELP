@@ -5,6 +5,8 @@ quantidade de jesuítas seja inferior à de canibais. Qual a solução para
 efetuar a travessia com segurança? Elabore um algoritmo mostrando a
 resposta, indicando as ações que concretizam a solução deste
 problema.
+link do jogo para testar a lógica:
+https://rachacuca.com.br/jogos/missionarios-e-canibais/
 
 mover 2 canibal para esquerda, deixar 1 canibal e voltar 1 canibal para direita;
 mover 2 canibal para esquerda, deixar 1 canibal e voltar 1 canibal para direita;
