@@ -1,0 +1,19 @@
+<!-- Elaborar um programa para uma loja, que leia o preço de um produto e informe
+as opções de pagamento da loja. Calcule e informe o valor para pagamento à vista
+com 10% de desconto e o valor em 3x. -->
+
+
+<meta charset="UTF-8">
+<script>
+    const precoTotal = prompt("Valor do produto: R$");
+    const preco = Number(precoTotal.replace(',','.'))
+    if (preco<=0 || isNaN(preco)) {
+        alert("Atualize a página e digite novamente um preço válido.");
+    } else {
+    const valorAVista = preco * 0.9;
+    const valorParcela = preco / 3;
+    alert("Opções de Pagamento: \n - À vista: R$ " + valorAVista.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) +  "\n - Ou 3x de: R$ "+ valorParcela.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+    }
+</script>
+
+<!-- \n é para quebra de linha -->

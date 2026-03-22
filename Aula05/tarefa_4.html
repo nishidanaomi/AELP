@@ -1,0 +1,15 @@
+<!-- Elaborar um programa que leia 2 notas de um aluno em uma disciplina. Calcule
+e informe a média das notas. -->
+
+<meta charset="UTF-8">
+<script>
+    const nota1 = Number(prompt("Digite a primeira nota:"));
+    const nota2 = Number(prompt("Digite a segunda nota:"));
+    if (isNaN(nota1) || isNaN(nota2) || nota1<0 || nota2<0 || nota1>10 || nota2>10) {
+        alert("Atualize a página e digite novamente uma nota válida.");
+    } else {
+        const media = ( nota1 + nota2 ) / 2;
+        alert(`A média entre as notas
+    ${nota1} e ${nota2} é: ${media}!`)
+    }
+</script>

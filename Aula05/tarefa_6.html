@@ -1,0 +1,28 @@
+<!-- Elaborar um programa que leia quatro números quaisquer. Calcule o quadrado de cada um deles, e apresente o resultado final da soma dos quadrados.
+Exemplo: 
+Número 1: 2
+Número 2: 5
+Número 3: 3
+Número 4: 1
+Total da soma dos quadrados: 39 -->
+
+<meta charset="UTF-8">
+<script>
+    alert(`Olá! Aqui vamos te ajudar a fazer a soma do quadrado de 4 números!`)
+    const numero1 = Number(prompt("Digite o primeiro número:").replace(',','.'));
+    const numero2 = Number(prompt("Digite o segundo número:").replace(',','.'));
+    const numero3 = Number(prompt("Digite o terceiro número:").replace(',','.'));
+    const numero4 = Number(prompt("Digite o quarto número:").replace(',','.'));
+    if (isNaN(numero1) || isNaN(numero2) || isNaN(numero3) || isNaN(numero4)) {
+        alert('Erro. Digite números válidos.');
+    } else {
+        const soma = (numero1 ** 2) + (numero2 ** 2) + (numero3 ** 2) + (numero4 ** 2);
+        alert(`Resultados:
+- O quadrado de ${numero1.toLocaleString('pt-BR')} = ${(numero1 ** 2).toLocaleString('pt-BR')}
+- O quadrado de ${numero2.toLocaleString('pt-BR')} = ${(numero2 ** 2).toLocaleString('pt-BR')}
+- O quadrado de ${numero3.toLocaleString('pt-BR')} = ${(numero3 ** 2).toLocaleString('pt-BR')}
+- O quadrado de ${numero4.toLocaleString('pt-BR')} = ${(numero4 ** 2).toLocaleString('pt-BR')}
+
+Soma total: ${soma}`);
+    }
+</script>

@@ -1,0 +1,31 @@
+<!-- Elaborar um programa com as seguintes definições:
+• Ler uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit;
+• A fórmula de conversão é: 𝐹=𝐶×1,8+32, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius. -->
+
+<meta charset="UTF-8">
+<script>
+    // Dando as boas vindas
+    alert(`Bem-vindos ao Conversor de Temperatura!
+Vamos te ajudar a converter graus Celsius (ºC) em graus Fahrenheit (ºF)! 
+Clique em OK para iniciar.`);
+    // Iniciando a entrada
+    const grauCelsius = prompt(`Quantos graus Celsius você quer converter?
+Digite o número:`);
+    // Verificando se entrada é nula ou vazia 
+    if (grauCelsius === null || grauCelsius.trim() === "") {
+        alert(`Algo saiu errado :(
+Operação cancelada ou nenhum valor foi digitado.`)
+        // Transsformar em Numero e trocar a virgula
+    } else {
+        const valorCelsius = Number(grauCelsius.replace(',', '.'));
+        // Se não for um número ou não existir nada dentro da variavel
+        if (isNaN(valorCelsius) || (!grauCelsius)) {
+            alert(`Algo saiu errado :(
+Por favor, atualize a página e tente novamente.`)
+            //calculo e saída
+        } else {
+            const conversao = (valorCelsius * 1.8) + 32;
+            alert(`Pronto! ${grauCelsius.toLocaleString('pt-BR')}ºC equivalem a ${conversao.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}ºF :)`);
+        }
+    }
+</script>

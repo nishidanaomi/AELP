@@ -1,0 +1,20 @@
+<!-- Elaborar um programa que leia o valor da cotação do dólar e o valor em dólar a
+ser convertido. Calcule e informe o valor convertido para reais. -->
+
+<meta charset="UTF-8">
+<script>
+    const entradaCotacao = prompt(`Bem-vindos ao Conversor de Câmbio!
+Por favor, digite qual a cotação de hoje.
+Qual o preço do dólar em reais: R$`);
+const dinheiroCarteira = prompt(`Agora digite a quantia em dólares que você quer converter para reais. US$:`);
+const dolarParaReal = entradaCotacao.replace(',','.');
+const valorAConverter = dinheiroCarteira.replace(',','.');
+const numCotacao = Number(dolarParaReal);
+const numDolar = Number(valorAConverter);
+    if (numCotacao<=0 || isNaN(numCotacao) || numDolar<=0 || isNaN(numDolar)) {
+        alert("Por favor, aperte o F5 e digite novamente um número válido.")
+    } else {
+        const valorConversao = numCotacao * numDolar;
+        alert(`US$ ${numDolar.toLocaleString('en-US', {style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2})} convertidos hoje valem R$ ${valorConversao.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}.`);
+    }
+</script>
