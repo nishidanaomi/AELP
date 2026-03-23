@@ -6,28 +6,6 @@ percentual de lucro informado pelo vendedor;
 de lucro que o vendedor deseja sobre este produto. -->
 
 <meta charset="UTF-8">
-<!-- <script>
-    alert(`Bem-vindos a Calculadora de Preços!
-Aperte o OK para continuar.`);
-    const custo = prompt(`Primeiro coloque o preço de custo do produto: R$`);
-    if (precoCusto <= 0 || precoCusto === null || custo.trim() === "") {
-        alert(`Ops! Algo saiu errado. Por favor aperte o F5 e comece novamente.`);
-    }
-    else {
-        const precoCusto = Number(custo.replace(',', '.'));
-        if (isNaN(precoCusto)) {
-
-            const lucro = prompt(`Agora digite o valor em porcentagem que quer acrescentar em seu produto:`).replace(',', '.');
-            const porcentualLucro = Number(lucro);
-        }
-        if (isNaN(porcentualLucro) || porcentualLucro <= 0 || porcentualLucro === null)
-            alert(`Ops! Algo saiu errado. O número digitado não é válido.
-Aperte o F5 e comece novamente.`);
-    } else {
-        const precoVenda = precoCusto * (1 + (porcentualLucro / 100));
-        alert(`O preço final de venda do produto é R$ ${precoVenda}.`);
-    }
-</script> -->
 <script>
     alert(`Bem-vindos a Calculadora de Preços!
 Aperte o OK para continuar.`);
@@ -36,19 +14,24 @@ Aperte o OK para continuar.`);
         alert(`Ops! Algo saiu errado. Por favor aperte o F5 e comece novamente.`);
     } else {
         const precoCusto = Number(custo.replace(',', '.'));
-        const lucro = prompt(`Agora digite o valor em porcentagem que quer acrescentar em seu produto:`);
-          if (lucro === null || lucro.trim() === "") {
-            alert(`Ops! Algo saiu errado. O número digitado não é válido.
+        if (isNaN(precoCusto)) {
+            alert(`Erro: O custo deve ser um número.
 Aperte o F5 e comece novamente.`);
         } else {
-                  const percentualLucro = Number(lucro.replace(',', '.'));
+            const lucro = prompt(`Agora digite o valor da porcentagem que quer acrescentar em seu produto:`);
+            if (lucro === null || lucro.trim() === "") {
+                alert(`Ops! Algo saiu errado. O lucro deve ser um número.
+Aperte o F5 para começar novamente.`);
+            } else {
+                const percentualLucro = Number(lucro.replace(',', '.'));
                 if (isNaN(percentualLucro)) {
-                    // Erro se lucro não for número
+                                   alert(`Ops! Algo saiu errado. Digite um número válido.
+Aperte o F5 e comece novamente.`);
                 } else {
-                    // SÓ AQUI, onde tudo deu certo, fazemos a conta!
                     const precoVenda = precoCusto * (1 + percentualLucro / 100);
-                    alert(`Venda: R$ ${precoVenda.toLocaleString('pt-BR')}`);
+                    alert(`O preço final de venda do produto é: R$ ${precoVenda.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}.`);
                 }
             }
         }
+    }
 </script>
