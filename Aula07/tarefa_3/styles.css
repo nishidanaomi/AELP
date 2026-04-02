@@ -1,0 +1,96 @@
+:root {
+    --cor-fundo: #F4F7F6;
+    --cor-primaria: #2C3E50;
+    --cor-destaque: #3498DB;
+    --cor-botao: #27AE60;
+    --cor-reset: #E74C3C;
+    --cor-texto: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para o cálculo de tamanho das caixas */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--cor-texto);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-destaque);
+    padding-bottom: 10px;
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #DDD;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    text-align: center;
+}
+
+input[type="number"]:focus {
+    border-color: var(--cor-destaque);
+}
+
+.btn-container {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="submit"], input[type="reset"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    color: white;
+}
+
+input[type="submit"] { background-color: var(--cor-botao); }
+input[type="reset"] { background-color: var(--cor-reset); }
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+#outValorPagar {
+    margin-top: 25px;
+    color: var(--cor-destaque);
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+}

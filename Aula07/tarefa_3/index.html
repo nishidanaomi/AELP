@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>LAN HOUSE JS</title>
+</head>
+
+<body>
+    <h1>LAN HOUSE JS</h1>
+    <form>
+        <p>
+            <label for="inPrecoMinuto">Valor por 15 min de uso: R$</label>
+            <input type="number" id="inPrecoMinuto" name="input-preco" placeholder="Preço a cada 15 minutos" step="0.01"
+                min="0.01" required>
+        </p>
+        <p>
+            <label for="inTempoCliente">Tempo de uso do cliente (min): </label>
+            <input type="number" id="inTempoCliente" name="input-cliente" placeholder="Digite o tempo de uso" step="1"
+                min="0" required>
+        </p>
+        <div class="btn-container">
+            <input type="submit" value="Calcular Valor a Pagar">
+            <input type="reset" value="Limpar Dados">
+        </div>
+    </form>
+    <h3 id="outValorPagar"></h3>
+</body>
+
+</html>

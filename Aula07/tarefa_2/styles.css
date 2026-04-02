@@ -34,6 +34,10 @@ form {
     gap: 15px;
 }
 
+label {
+    text-align: center;
+}
+
 input[type="submit"] {
     background-color: var(--cor-botao);
     color: var(--cor-texto);
@@ -82,8 +86,4 @@ input[type="number"] {
     color: var(--cor-botao);
     font-weight: 900;
     font-size: larger;
-}
-
-label {
-    text-align: center;
 }
