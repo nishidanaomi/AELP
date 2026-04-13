@@ -29,7 +29,11 @@ Para rodar um script com sucesso, siga este checklist:
 - `Ctrl + C` = Interromper Node.js (caso não funcione digitar "cls" no terminal);
 - `↑` (seta para cima) = recupera o último comando digitado;
 - `Tab` = Autocompletar nomes de arquivos/pastas;
+<<<<<<< HEAD
 - `F7` = Exibe histórico de comandos em lista; > não funciona no Bash
+=======
+- `F7` = Exibe histórico de comandos em lista; >não funciona no Bash
+>>>>>>> 23fa5013236c6fad9cf63b84a42de392ff3facfd
 
 ---
 
@@ -45,9 +49,9 @@ Para rodar um script com sucesso, siga este checklist:
 
 ### Atalhos com teclado:
 
-- `Ctrl + A` = Move o cursor para o início da linha; ~~ <= não funciona no Shell~~
-- `Ctrl + E` = Move o cursor para o final da linha; ~~ <= não funciona no Shell~~
-- `Alt + Backspace` = Apaga uma palavra inteira; ~~ <= não funciona no Shell~~
+- `Ctrl + A` = Move o cursor para o início da linha; >não funciona no Shell
+- `Ctrl + E` = Move o cursor para o final da linha; >não funciona no Shell
+- `Alt + Backspace` = Apaga uma palavra inteira; >não funciona no Shell
 - `Ctrl + J` = Abre o terminal dentro do VS Code;
 - `Ctrl + L` = Comando para limpar a tela do terminal ("cls");
 - `Ctrl + C` = Interromper Node.js (caso não funcione digitar "cls" no terminal);
