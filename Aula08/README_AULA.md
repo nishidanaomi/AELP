@@ -29,7 +29,7 @@ Para rodar um script com sucesso, siga este checklist:
 - `Ctrl + C` = Interromper Node.js (caso não funcione digitar "cls" no terminal);
 - `↑` (seta para cima) = recupera o último comando digitado;
 - `Tab` = Autocompletar nomes de arquivos/pastas;
-- `F7` = Exibe histórico de comandos em lista; ~~ <= não funciona no Bash~~ 
+- `F7` = Exibe histórico de comandos em lista; > não funciona no Bash
 
 ---
 
