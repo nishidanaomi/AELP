@@ -1,9 +1,10 @@
 /* Um supermercado está com uma promoção. Para aumentar suas vendas no setor de higiene, cada etiqueta de produto deve exibir uma mensagem anunciando 50% de desconto (para um item) na compra de três unidades do produto. Elaborar um programa que leia descrição e preço de um produto. Após, apresente as mensagens indicando a promoção */
 const prompt = require("prompt-sync")()
 
-const produto = prompt("Produto: ")
-const preco = prompt("Preço R$: ")
+const produto = Number(prompt("Produto: "))
+const preco = Number(prompt("Preço R$: "))
 
+if ( isNaN(produto) isNaN(preco) )
 const desconto = preco * 0.5
 const total = (preco * 2) + desconto
 
