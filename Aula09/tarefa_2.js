@@ -10,7 +10,7 @@ console.log("Vamos te ajudar a descobrir se o número da raíz quadrada é exata
 const entrada = prompt("Qual a raíz quadrada do número: ")
 const raiz = Number(entrada)
 
-if (isNaN(raiz) || raiz < 0 || entrada.trim === "") {
+if (isNaN(raiz) || raiz < 0 || !Number.isInteger(raiz) || entrada.trim() === "") {
     console.log("Erro: Digite um número inteiro válido.")
 } else {
     const resultado = Math.sqrt(raiz)
