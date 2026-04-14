@@ -1,4 +1,4 @@
-# Preparando o Ambiente:
+# Preparando o Ambiente (Node.js):
 
 Para rodar um script com sucesso, siga este checklist:
 
