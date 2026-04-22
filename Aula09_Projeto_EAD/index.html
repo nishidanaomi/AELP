@@ -5,22 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Peso Ideal</title>
-    <link rel="icon" href="/Aula09_Projeto_EAD/assets/icons/AELP.png" type="image/png">
-    <link rel="stylesheet" href="/Aula09_Projeto_EAD/styles/style.css">
-    <script src="/Aula09_Projeto_EAD/scripts/script.js" defer></script> // defer: continua baixando JS sem parar de
-    carregar o HTML
+    <link rel="icon" href="assets/icons/AELP.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script> <!-- defer: continua baixando JS sem parar de carregar o HTML -->
 </head>
 
 <body>
-    <img src="/Aula09_Projeto_EAD/assets/images/peso_ideal.png" alt="Balança de peso">
+    <img src="assets/images/peso_ideal.png" alt="Balança de peso">
     <h1>Programa Cálculo do Peso Ideal</h1>
     <form action="">
         <p>Nome:
             <input type="text" id="inNome" required>
         </p>
         <p>Sexo:
-            <input type="radio" name="sexo" id="inMasculino" required> Masculino
-            <input type="radio" name="sexo" id="inFeminino" required> Feminino
+            <input type="radio" name="sexo" id="inMasculino" required> 
+            <label for="inMasculino">Masculino</label>      <!-- Permite marcar clicando no texto -->
+            <input type="radio" name="sexo" id="inFeminino" required> 
+            <label for="inFeminino">Feminino</label>
         </p>
         <p>Altura (m):
             <input type="number" min="0" step="0.01" id="inAltura" required>
@@ -28,7 +29,7 @@
         <input type="submit" value="Calcular Peso Ideal">
         <input type="reset" value="Limpar Campos">
     </form>
-    <h3></h3>
+    <h3 id="outResposta"></h3>
 </body>
 
 </html>
