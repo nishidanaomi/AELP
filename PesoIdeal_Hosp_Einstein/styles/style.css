@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    line-height: 1.5;
+}
+img { 
+    max-width: 100%; 
+    display: block; 
+}
+header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+.container {
+width: min(calc(100% - 32px), 1180px); 
+margin: 0 auto;
+}
+
+.btn {
+
+}
