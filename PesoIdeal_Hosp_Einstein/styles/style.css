@@ -1,21 +1,35 @@
+:root {                                 /* Aqui criei as váriaveis */
+    --fonte: "Quicksand", sans-serif;
+    --cor-primaria: #004a8d;    /* Azul Einstein */
+    --cor-secundaria: #3498db;  /* Azul claro */
+    --cor-fundo: #f4f7f6;      /* Cinza hospitalar */
+    --cor-texto: #2c3e50;      /* Cinza escuro para leitura */
+    --cor-detalhe: #7f8c8d;    /* Cinza para as instruções */
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: "Quicksand", sans-serif;
+    font-family: var(--fonte);
     line-height: 1.5;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
+
 img { 
     max-width: 100%; 
     display: block; 
 }
+
 header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: var(--cor-primaria);
+}
 
 .container {
 width: min(calc(100% - 32px), 1180px); 
@@ -23,5 +37,5 @@ margin: 0 auto;
 }
 
 .btn {
-
+color: blue
 }
