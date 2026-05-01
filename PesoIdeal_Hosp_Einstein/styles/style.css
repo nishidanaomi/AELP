@@ -1,41 +1,95 @@
-:root {                                 /* Aqui criei as váriaveis */
-    --fonte: "Quicksand", sans-serif;
-    --cor-primaria: #004a8d;    /* Azul Einstein */
-    --cor-secundaria: #3498db;  /* Azul claro */
-    --cor-fundo: #f4f7f6;      /* Cinza hospitalar */
-    --cor-texto: #2c3e50;      /* Cinza escuro para leitura */
-    --cor-detalhe: #7f8c8d;    /* Cinza para as instruções */
+:root {
+    /* criando variaveis de estilo */
+    --cor-azul-primario: #004a8d;
+    --cor-azul-secundario: #3498db;
+    --cor-fundo: #f8f9fa;
+    --cor-branco: #ffffff;
+    --cor-texto: #2c3e50;
+    --cor-legenda: #7f8c8d;
+    --cor-verde: #27ae60;
 }
 
+    /* seleciona tudo (*) da pagina. Aqui resetei algumas coisas e coloquei a fonte da página */
 * {
-    box-sizing: border-box;
-}
-
-body {
     margin: 0;
-    font-family: var(--fonte);
-    line-height: 1.5;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
 }
-
-img { 
-    max-width: 100%; 
-    display: block; 
+body {
+    padding-top: 80px; /* a altura do header */
 }
 
 header {
-    position: sticky;
+    position: fixed; /* fixando o header no topo */
     top: 0;
-    z-index: 20;
-    background-color: var(--cor-primaria);
+    width: 100%; /* a largura que ocupa de 100% da tela*/
+    height: 80px; /* a altura */
+    background-color: var(--cor-fundo);
+    box-shadow: 0 2px 10px rbga(0,0,0,0.1); /* sombra para dar profundidade: horizintal, vertical, desfoque, cor */
+    z-index: 1000; /* para o header ficar sobreposto, profundidade: acima de tudo */
 }
 
-.container {
-width: min(calc(100% - 32px), 1180px); 
-margin: 0 auto;
+.container-cabecalho {
+    display: flex;   /* esse é o famoso flexbox que até hoje apanho */
+    justify-content: space-between; /* espaçando os elementos */
+    align-items: center; /* aqui estamos alinhando os itens no centro  verticalmente */
+    max-width: 1200px; /* limitando o tamanho maximo para o align-items funcionar sem erro */
+    margin: 0 auto; /* ajustando a margem, 2 valores de: cima e baixo, esquerda e direita  */
+    padding: 15px 20px; /* espaço interno da "caixa" */
 }
 
-.btn {
-color: blue
+.logo-area {
+    display: flex;
+    align-items: center; 
+    gap: 10px; /* com espaçamento de 10px */
+}
+
+.logo-area img {
+    height: 40px; /* altura */
+    width: auto; /* largura */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3)); /* sombrinha pro logo */
+}
+
+#logo-texto {
+    font-weight: 900; /* equivalente a extra bold */
+    -webkit-text-stroke: 0.5px var(--cor-azul-primario); /* essas duas linhas tô forçado pra engrossar mais a fonte */
+    letter-spacing: -0.5 var(--cor-azul-primario);
+    font-size: 1.1rem; /* tamanho da fonte. coloquei em rem para relativo ao tamanho do html/raiz (root em)  */
+    color: var(--cor-azul-primario); /* é a cor do texto */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.slogan {
+    color: var(--cor-legenda);
+    font-weight: 700; /* equivalente ao bold */
+    margin: 0; 
+}
+
+.btn-primario {
+    display: inline-block;
+    background-color: var(--cor-azul-primario);
+    color: var(--cor-branco);
+    padding: 10px 24px; /* espaçamento interno do "botão" */
+    text-decoration: none; /* pra remover o sublinhado do link */
+    border-radius: 50px; /* pra arredondar as bordas */
+    font-weight: 600;
+    font-size: 0.9rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    transition: 0.3s /* pra suavizar a mudança de cor no hover (quando passa o mouse por cima) */
+}
+
+.btn-primario:hover { /* para mudar quando passarmos o mouse em cima */
+    background-color: var(--cor-azul-secundario);
+    transform: translateY(-2px); /* o botão "pula" um pouquinho, pra interação */
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* sombra */
+}
+
+.hero {
+    background-image: url('/assets/images/peso-ideal.webp'); /* colocamos a imagem aqui para podermos deixa-la de fundo */
+    background-size: cover; /* preenche a tela */
+    background-position: center; /* centraliza */
+    min-height: 80vh; /* altura min para seção em viewport */
+    padding: 80px 0 150px;
+    text-align: left;
 }

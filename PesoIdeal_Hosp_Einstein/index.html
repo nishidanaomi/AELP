@@ -8,64 +8,83 @@
     <link rel="icon" href="assets/icons/favicon-scale.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <!-- fonte que peguei no fonts.google -->
+    <!-- fonte que peguei no fonts.google para usar no css -->
     <script src="scripts/script.js" defer></script> <!-- defer: continua baixando JS sem parar de carregar o HTML -->
 </head>
 
 <body>
     <header>
-        <div class="container cabecalho">
-            <nav class="brand">
+        <div class="container-cabecalho">
+            <div class="logo-area">
                 <img src="assets/icons/favicon-scale.png" alt="Favicon de balança">
-                <p id="logo">Peso Ideal</p>
-            </nav>
-            <p>Descubra seu peso ideal</p>
-            <a class="btn btn-primario" href="#calculadora">Calcular agora</a>
+                <span id="logo-texto">Peso Ideal</span>
+            </div>
+            <p class="slogan">Descubra seu peso ideal e ajustado</p>
+            <a class="btn-primario" href="#calculadora">Calcular agora</a>
         </div>
     </header>
-    <main class="container">
-        <div class="coluna-imagem">
-            <img src="assets/images/peso-ideal.webp" alt="Balança de peso">
-        </div>
-        <div class="coluna-conteudo">
-            <h1>Programa Peso Ideal - Hospital Albert Einstein</h1>
-
-            <h2>Peso Ideal / Peso Ideal Ajustado</h2>
-            <div class="container main">
-                <h4>Instruções</h4>
-                <p>
-                    Masculino: Peso Ideal: 52 + (0,75 x (altura - 152,4))<br>
-                    Feminino: Peso Ideal: 49 + (0,67 x (altura - 152,4))<br>
-                    Peso Ideal Ajustado: (Kg) = (Peso Atual(Kg) - Peso Ideal (Kg)) x 0,25 + Peso Ideal (kg)
-                </p>
+    <main>
+        <section class="hero">
+            <div class="container-hero">
+                <div class="hero-conteudo">
+                    <h1>Programa Peso Ideal</h1>
+                    <h2>Hospital Albert Einstein</h2>
+                    <div class="instrucoes">
+                        <h3>Peso Ideal / Peso Ideal Ajustado</h3>
+                        <h4>Instruções</h4>
+                        <p>
+                            Masculino: Peso Ideal: 52 + (0,75 x (altura - 152,4))<br>
+                            Feminino: Peso Ideal: 49 + (0,67 x (altura - 152,4))<br>
+                            Peso Ideal Ajustado: (Kg) = (Peso Atual(Kg) - Peso Ideal (Kg)) x 0,25 + Peso Ideal (kg)
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="container main">
-            <h4>Preencha os campos</h4>
-            <form action="">
-                <p>Nome:
-                    <input type="text" id="inNome" required>
-                </p>
-                <p>Sexo:
-                    <input type="radio" name="sexo" id="inMasculino" required>
-                    <label for="inMasculino">Masculino</label> <!-- Permite marcar clicando no texto -->
-                    <input type="radio" name="sexo" id="inFeminino" required>
-                    <label for="inFeminino">Feminino</label>
-                </p>
-                <p>Altura:
-                    <input type="number" placeholder="Em Centímetros (cm)" min="0" step="0.01" id="inAltura" required>
-                </p>
-                <p>Peso:
-                    <input type="number" placeholder="Em Quilos (Kg)" min="0" step="0.01" id="inPeso" required>
-                </p>
-                <input type="submit" value="Calcular Peso Ideal">
-                <input type="reset" value="Limpar Campos">
-            </form>
-        </div>
-        <div class="container main">
-            <h3 id="outIdeal"></h3>
-            <h3 id="outAjustado"></h3>
-        </div>
+        </section>
+        <section class="sessao-calculo" id="calculadora">
+            <div class="card-calculadora">
+                <h3>Calcule seu Peso ideal / Peso ideal ajustado</h3>
+                <p>Preencha as informações abaixo:</p>
+                <form id="meuForm">
+                    <div class="grid-inputs">
+                        <p>Nome:
+                            <input type="text" placeholder="Digite seu nome" id="inNome" required>
+                        </p>
+                    </div>
+                    <div class="campo">
+                        <p>Sexo:</p>
+                        <div class="radio-group"> <!-- para usar o select e ficar mais bonito -->
+                            <input type="radio" name="sexo" id="inMasculino" required>
+                            <label for="inMasculino">Masculino</label> <!-- Permite marcar clicando no texto -->
+                            <input type="radio" name="sexo" id="inFeminino" required>
+                            <label for="inFeminino">Feminino</label>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <p>Altura:
+                            <input type="number" placeholder="Em Centímetros (cm)" min="0" step="0.01" id="inAltura"
+                                required>
+                        </p>
+                    </div>
+                    <div class="campo">
+                        <p>Peso:
+                            <input type="number" placeholder="Em Quilos (Kg)" min="0" step="0.01" id="inPeso" required>
+                        </p>
+                    </div>
+                    <input type="submit" value="Calcular Peso Ideal" class="btn-calculo">
+                    <input type="reset" value="Limpar Campos" class="btn-limpar">
+                </form>
+                <div class="painel-resultados">
+                    <h3 id="outNome"></h3>
+                    <div class="res-item">
+                        <h4 id="outIdeal"></h4>
+                    </div>
+                    <div class="res-item">
+                        <h4 id="outAjustado"></h4>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 
