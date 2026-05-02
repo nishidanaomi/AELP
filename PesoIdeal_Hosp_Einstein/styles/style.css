@@ -185,6 +185,7 @@ header {
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: var(--cor-cinza-escuro);
 }
 
 .radio-sexo input[type=radio] { /* tentando alinhar o input */
