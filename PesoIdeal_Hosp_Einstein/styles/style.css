@@ -195,6 +195,9 @@ header {
     margin-left: -240px;
 }
 
+.campo {
+    margin: 15px;
+}
 .campo input {
     width: 100%;
     padding: 12px;
@@ -203,7 +206,7 @@ header {
 }
 
 .btn-out {
-    padding: 15px 30px;
+    padding: 8px 30px;
     font-size: 1.4rem;
     font-weight: bold;
     border-radius: 12px;
@@ -218,7 +221,7 @@ header {
     background-color: var(--cor-azul-primario);
     color:var(--cor-branco);
     box-shadow: 0 4px 15px rgba(0, 74, 141, 0.3);
-    
+    margin-top: 30px;
 }
 
 .btn-calculo:hover {
@@ -265,4 +268,24 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     flex: 1; /* divide o espaço por igual entre os filhos (dentro dessa "caixa") */
     min-width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .container-cabecalho {
+        font-size: 0.8rem;
+    }
+
+    #logo-texto {
+    font-weight: 700;
+    font-size: 0.9rem;
+    }
+
+    .slogan {
+        visibility: hidden;
+    }
+    .btn-primario {
+        padding: 8px 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
 }
