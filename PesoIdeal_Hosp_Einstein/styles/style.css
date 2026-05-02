@@ -2,13 +2,14 @@
     /* criando variaveis de estilo */
     --cor-azul-primario: #004a8d;
     --cor-azul-secundario: #3498db;
-    --cor-fundo: #f8f9fa;
+    --cor-azul-terciario: #003668;
+    --cor-fundo-primario: #f8f9fa;
+    --cor-fundo-secundario: #f4f7f6;
+    --cor-painel-resp: #eef5f9;
     --cor-branco: #ffffff;
     --cor-texto: #2c3e50;
-    --cor-legenda: #7f8c8d;
     --cor-cinza-escuro: #585f5f;
-    --cor-fundo-secundario: #f4f7f6;
-    --cor-verde: #27ae60;
+    --cor-legenda: #7f8c8d;
 }
 
     /* seleciona tudo (*) da pagina. Aqui resetei algumas coisas e coloquei a fonte da página */
@@ -27,7 +28,7 @@ header {
     top: 0;
     width: 100%; /* a largura que ocupa de 100% da tela*/
     height: 80px; /* a altura */
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-fundo-primario);
     box-shadow: 0 2px 10px rbga(0,0,0,0.1); /* sombra para dar profundidade: horizintal, vertical, desfoque, cor */
     z-index: 1000; /* para o header ficar sobreposto, profundidade: acima de tudo */
 }
@@ -221,7 +222,7 @@ header {
 }
 
 .btn-calculo:hover {
-    background-color: #003668;
+    background-color: var(--cor-azul-terciario);
     transform: translateY(-2px);
 }
 
@@ -241,12 +242,12 @@ header {
     gap: 20px;
     margin-top: 30px;
     padding: 20px;
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-fundo-primario);
     border-radius: 15px;
     display: none; /*  esconde da tela */
     margin-top: 30px;
     padding: 20px;
-    background-color: #eef5f9;
+    background-color: var(--cor-painel-resp);
     border-radius: 15px;
 }
 
