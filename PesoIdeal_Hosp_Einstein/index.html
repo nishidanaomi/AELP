@@ -7,7 +7,7 @@
     <title>Peso Ideal - Hospital Albert Einstein</title>
     <link rel="icon" href="assets/icons/favicon-scale.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <!-- fonte que peguei no fonts.google para usar no css -->
     <script src="scripts/script.js" defer></script> <!-- defer: continua baixando JS sem parar de carregar o HTML -->
 </head>
@@ -26,11 +26,11 @@
     <main>
         <section class="hero">
             <div class="container-hero">
-                <div class="hero-conteudo">
+                <div class="card-instrucoes">
                     <h1>Programa Peso Ideal</h1>
                     <h2>Hospital Albert Einstein</h2>
-                    <div class="instrucoes">
-                        <h3>Peso Ideal / Peso Ideal Ajustado</h3>
+                    <h3>Peso Ideal / Peso Ideal Ajustado</h3>
+                    <div class="formula-box">
                         <h4>Instruções</h4>
                         <p>
                             Masculino: Peso Ideal: 52 + (0,75 x (altura - 152,4))<br>
@@ -44,18 +44,22 @@
         <section class="sessao-calculo" id="calculadora">
             <div class="card-calculadora">
                 <h3>Calcule seu Peso ideal / Peso ideal ajustado</h3>
-                <p>Preencha as informações abaixo:</p>
+                <p class="calculadora-texto">Preencha as informações abaixo:</p>
                 <form id="meuForm">
                     <div class="grid-inputs">
-                        <p>Nome:
-                            <input type="text" placeholder="Digite seu nome" id="inNome" required>
-                        </p>
+                        <div class="campo">
+                            <p>Nome:
+                                <input type="text" placeholder="Digite seu nome" id="inNome" required>
+                            </p>
+                        </div>
                     </div>
                     <div class="campo">
                         <p>Sexo:</p>
-                        <div class="radio-group"> <!-- para usar o select e ficar mais bonito -->
+                        <div class="radio-sexo">
                             <input type="radio" name="sexo" id="inMasculino" required>
                             <label for="inMasculino">Masculino</label> <!-- Permite marcar clicando no texto -->
+                        </div>
+                        <div class="radio-sexo">
                             <input type="radio" name="sexo" id="inFeminino" required>
                             <label for="inFeminino">Feminino</label>
                         </div>
@@ -71,15 +75,15 @@
                             <input type="number" placeholder="Em Quilos (Kg)" min="0" step="0.01" id="inPeso" required>
                         </p>
                     </div>
-                    <input type="submit" value="Calcular Peso Ideal" class="btn-calculo">
-                    <input type="reset" value="Limpar Campos" class="btn-limpar">
+                    <input type="submit" value="Calcular" class="btn-out btn-calculo">
+                    <input type="reset" value="Limpar" class="btn-out btn-limpar">
                 </form>
                 <div class="painel-resultados">
                     <h3 id="outNome"></h3>
-                    <div class="res-item">
+                    <div class="resp-item">
                         <h4 id="outIdeal"></h4>
                     </div>
-                    <div class="res-item">
+                    <div class="resp-item">
                         <h4 id="outAjustado"></h4>
                     </div>
                 </div>

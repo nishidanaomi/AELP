@@ -6,6 +6,8 @@
     --cor-branco: #ffffff;
     --cor-texto: #2c3e50;
     --cor-legenda: #7f8c8d;
+    --cor-cinza-escuro: #585f5f;
+    --cor-fundo-secundario: #f4f7f6;
     --cor-verde: #27ae60;
 }
 
@@ -14,7 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Lexend Deca", sans-serif;
 }
 body {
     padding-top: 80px; /* a altura do header */
@@ -41,7 +43,7 @@ header {
 
 .logo-area {
     display: flex;
-    align-items: center; 
+    align-items: center;
     gap: 10px; /* com espaçamento de 10px */
 }
 
@@ -55,22 +57,22 @@ header {
     font-weight: 900; /* equivalente a extra bold */
     -webkit-text-stroke: 0.5px var(--cor-azul-primario); /* essas duas linhas tô forçado pra engrossar mais a fonte */
     letter-spacing: -0.5 var(--cor-azul-primario);
-    font-size: 1.1rem; /* tamanho da fonte. coloquei em rem para relativo ao tamanho do html/raiz (root em)  */
+    font-size: 1.3rem; /* tamanho da fonte. coloquei em rem para relativo ao tamanho do html/raiz (root em)  */
     color: var(--cor-azul-primario); /* é a cor do texto */
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .slogan {
-    color: var(--cor-legenda);
+    color: var(--cor-cinza-escuro);
     font-weight: 700; /* equivalente ao bold */
-    margin: 0; 
+    margin: 0;
 }
 
 .btn-primario {
     display: inline-block;
     background-color: var(--cor-azul-primario);
     color: var(--cor-branco);
-    padding: 10px 24px; /* espaçamento interno do "botão" */
+    padding: 15px 24px; /* espaçamento interno do "botão" */
     text-decoration: none; /* pra remover o sublinhado do link */
     border-radius: 50px; /* pra arredondar as bordas */
     font-weight: 600;
@@ -88,8 +90,176 @@ header {
 .hero {
     background-image: url('/assets/images/peso-ideal.webp'); /* colocamos a imagem aqui para podermos deixa-la de fundo */
     background-size: cover; /* preenche a tela */
-    background-position: center; /* centraliza */
-    min-height: 80vh; /* altura min para seção em viewport */
-    padding: 80px 0 150px;
-    text-align: left;
+    background-position: right center; /* centraliza */
+    height: 450px; /* fixando a altura do banner */
+    display: flex;
+    align-items: center;
+    color: var(--cor-azul-primario); /* cor do titulo */
+}
+
+.container-hero { /* ajustando o conteudo */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-conteudo {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-instrucoes {
+    background-color: rgba(255, 255, 255, 0.55); /* leve transparência para ver o fundo */
+    max-width: 800px; /* largura do card */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-left: 0; 
+    margin-right: auto;
+}
+
+.card-instrucoes h1 {
+    color: var(--cor-azul-primario);
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.card-instrucoes h2 {
+    color: var(--cor-azul-secundario);
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.card-instrucoes h3 {
+    color: var(--cor-azul-primario);
+    font-size: 1.3rem;
+}
+
+.card-instrucoes p {
+    color: var(--cor-cinza-escuro);
+}
+
+.formulas-box {
+    border-left: 4px solid var(--cor-azul-primario); /* Um detalhe azul na lateral */
+    padding-left: 20px;
+    background-color: rgba(0, 74, 141, 0.05); /* Um fundo azulzinho bem sutil */
+    padding: 15px 20px;
+    border-radius: 0 10px 10px 0;
+}
+
+.sessao-calculo {
+    background-color: var(--cor-fundo-secundarion);
+    padding-bottom: 80px;
+}
+
+.card-calculadora {
+    background-color: var(--cor-branco);
+    max-width: 760px; /* largura do card */
+    margin: 20px auto; /* margem negativa sobe o card */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.calculadora-texto {
+    font-size: 1.1rem;
+}
+
+.card-calculadora h3 {
+    color: var(--cor-azul-primario);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.grid-inputs {
+    display: grid; /* flex box */
+    gap: 20px;
+    margin-top: 20px;
+}
+.radio-sexo {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.radio-sexo input[type=radio] { /* tentando alinhar o input */
+    position: absolute; /* achei no stack overflow */
+    margin-top: 4px\9;
+    margin-left: -240px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.btn-out {
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: 100%; /* para os botões ocuparem a largura total do card */
+}
+
+.btn-calculo {
+    background-color: var(--cor-azul-primario);
+    color:var(--cor-branco);
+    box-shadow: 0 4px 15px rgba(0, 74, 141, 0.3);
+    
+}
+
+.btn-calculo:hover {
+    background-color: #003668;
+    transform: translateY(-2px);
+}
+
+.btn-limpar {
+    background-color: transparent;
+    color: var(--cor-cinza-escuro);
+    text-decoration: underline;
+}
+
+.btn-limpar:hover {
+    color: var(--cor-azul-secundario);
+}
+
+.painel-resultados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    border-radius: 15px;
+    display: none; /*  esconde da tela */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #eef5f9;
+    border-radius: 15px;
+}
+
+#outNome {
+    width: 100%;
+    margin: 0;
+}
+
+.resp-item {
+    background-color: var(--cor-branco);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    flex: 1; /* divide o espaço por igual entre os filhos (dentro dessa "caixa") */
+    min-width: 150px;
 }

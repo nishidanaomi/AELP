@@ -1,6 +1,7 @@
 // cria referência ao form e elemento onde será exibida a resposta
 const frm = document.querySelector("form")
 const resp = document.querySelector("h3")
+const painel = document.querySelector('.painel-resultados')
 
 // "ouvinte" de evento (porteiro), aciionando quando o botão submit for clicado
 frm.addEventListener("submit", (e) => {
@@ -22,13 +23,18 @@ frm.addEventListener("submit", (e) => {
     let pesoAjustado =  ((peso - pesoIdeal) * 0.25) + pesoIdeal  // seguindo as instruções da tabela
 
     // apresenta a resposta (altera o conteúdo do elemento h3 da página)
-    outNome.innerText = `${nome}: `
+    outNome.innerText = `Olá, ${nome}! `
     outIdeal.innerText = `Seu peso ideal é ${pesoIdeal.toFixed(2).replace(".",",")} kg.`  // troquei o ponto por vírgula na resposta do peso
-    outAjustado.innerText =`Seu peso ideal ajustado é ${pesoAjustado.toFixed(2).replace(".",",")} kg.`     
+    outAjustado.innerText =`Seu peso ideal ajustado é ${pesoAjustado.toFixed(2).replace(".",",")} kg.`
+
+    // style.display acessa o css pelo js para fazer um elemento aparecer e/ou sumir
+    painel.style.display = 'flex' // para aparecer o painel de resultados no html que ocutei pelo css
 })
    // limpa o conteúdo do elemento h3 que exibe a resposta
     frm.addEventListener("reset", () => {
     outNome.innerText = ""
     outIdeal.innerText = ""
     outAjustado.innerText = ""
-    })   
+
+    painel.style.display = 'none' // volta esconder o painel quando clicar em 'limpar'
+    })
