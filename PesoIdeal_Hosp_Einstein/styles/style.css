@@ -256,6 +256,7 @@ header {
 
 .resp-item {
     background-color: var(--cor-branco);
+    color: var(--cor-cinza-escuro);
     padding: 15px 25px;
     border-radius: 10px;
     text-align: center;
