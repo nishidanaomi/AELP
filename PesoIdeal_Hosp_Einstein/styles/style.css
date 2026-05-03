@@ -334,7 +334,7 @@ header {
 
     .campo input[type="radio"] {
         display: flex;
-        margin-left: auto;
+        margin-left: -20px;
     }
 
     .radio-sexo input[type="radio"]:checked + label {
@@ -343,6 +343,8 @@ header {
 
     .footer-content {
         position: relative;
+        padding-bottom: 12px;
+        background-color: var(--cor-fundo-secundario);
     }
 
     .footer-section:nth-child(1), /* aqui estou selecionando os dois primeiros filhos (1°p e 2ºp+a) */
