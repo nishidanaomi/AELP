@@ -183,6 +183,7 @@ header {
     gap: 20px;
     margin-top: 20px;
 }
+
 .radio-sexo {
     display: block; /* flexbox */
     position: relative; /* pra virar ponto de ref pro "filho" abaixo */
@@ -198,9 +199,9 @@ header {
 }
 
 .radio-sexo input[type="radio"]:checked + label {
-        color: var(--cor-azul-primario);
-        font-weight: 500;
-    }
+    color: var(--cor-azul-primario);
+    font-weight: 500;
+}
 
 .campo {
     margin: 15px;
