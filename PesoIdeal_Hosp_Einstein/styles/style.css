@@ -10,6 +10,8 @@
     --cor-texto: #2c3e50;
     --cor-cinza-escuro: #585f5f;
     --cor-legenda: #7f8c8d;
+    --sombra-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --sombra-secundaria: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
     /* seleciona tudo (*) da pagina. Aqui resetei algumas coisas e coloquei a fonte da página */
@@ -79,7 +81,7 @@ header {
     font-weight: 600;
     font-size: 0.9rem;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
-    transition: 0.3s /* pra suavizar a mudança de cor no hover (quando passa o mouse por cima) */
+    transition: 0.3s; /* pra suavizar a mudança de cor no hover (quando passa o mouse por cima) */
 }
 
 .btn-primario:hover { /* para mudar quando passarmos o mouse em cima */
@@ -114,7 +116,7 @@ header {
     max-width: 800px; /* largura do card */
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--sombra-card);
     margin-left: 0; 
     margin-right: auto;
 }
@@ -161,7 +163,7 @@ header {
     margin: 20px auto; /* margem negativa sobe o card */
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--sombra-card);
 }
 
 .calculadora-texto {
@@ -193,7 +195,6 @@ header {
     position: absolute; /* flutua o elemento */
     margin-top: 4px;
     margin-left: -240px; /* movendo pra direita, achei essa dica no stackoverflow */
-    visibility: hidden;
 }
 
 .radio-sexo input[type="radio"]:checked + label {
@@ -258,6 +259,7 @@ header {
     padding: 20px;
     background-color: var(--cor-painel-resp);
     border-radius: 15px;
+    box-shadow: var(--sombra-secundaria);
 }
 
 #outNome {
@@ -271,7 +273,7 @@ header {
     padding: 15px 25px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--sombra-secundaria);
     flex: 1; /* divide o espaço por igual entre os filhos (dentro dessa "caixa") */
     min-width: 150px;
 }
@@ -296,7 +298,8 @@ header {
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) { /* aqui é para a versão mobile/tablet */
+
     .container-cabecalho {
         font-size: 0.8rem;
     }
@@ -316,8 +319,21 @@ header {
     text-transform: uppercase;
     }
 
+    .card-instrucoes {
+        background-color: rgba(255, 255, 255, 0.75); /* deixei menos opaco para enxergar melhor as instruções*/
+    }
+
+    .card-instrucoes p {
+        color: var(--cor-texto);
+    }
+
     .card-calculadora {
         max-width: 90%;
+    }
+
+    .campo input[type="radio"] {
+        display: flex;
+        margin-left: auto;
     }
 
     .radio-sexo input[type="radio"]:checked + label {
