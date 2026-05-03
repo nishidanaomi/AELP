@@ -70,7 +70,7 @@ header {
 }
 
 .btn-primario {
-    display: inline-block;
+    display: inline-block; /* flex box */
     background-color: var(--cor-azul-primario);
     color: var(--cor-branco);
     padding: 15px 24px; /* espaçamento interno do "botão" */
@@ -123,7 +123,7 @@ header {
     color: var(--cor-azul-primario);
     font-size: 2rem;
     margin-bottom: 5px;
-    text-align: center;
+    text-align: center; /* pra alinhar o texto no meio */
 }
 
 .card-instrucoes h2 {
@@ -182,17 +182,17 @@ header {
     margin-top: 20px;
 }
 .radio-sexo {
-    position: relative;
-    display: block;
+    display: block; /* flexbox */
+    position: relative; /* pra virar ponto de ref pro "filho" abaixo */
     margin-top: 10px;
     margin-bottom: 10px;
     color: var(--cor-cinza-escuro);
 }
 
 .radio-sexo input[type=radio] { /* tentando alinhar o input */
-    position: absolute; /* achei no stack overflow */
-    margin-top: 4px\9;
-    margin-left: -240px;
+    position: absolute; /* flutua o elemento */
+    margin-top: 4px;
+    margin-left: -240px; /* movendo pra direita, achei essa dica no stackoverflow */
 }
 
 .campo {
@@ -210,9 +210,9 @@ header {
     font-size: 1.4rem;
     font-weight: bold;
     border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    border: none; /* tirando a borda*/
+    cursor: pointer; /* pointer ao colocar mouse sobre o btn */
+    transition: all 0.3s ease; /* animando tudo aqui durante 0.3s nessa velocidade (ease) */
     margin-top: 10px;
     width: 100%; /* para os botões ocuparem a largura total do card */
 }
@@ -226,13 +226,13 @@ header {
 
 .btn-calculo:hover {
     background-color: var(--cor-azul-terciario);
-    transform: translateY(-2px);
+    transform: translateY(-2px); /*movendo para cima */
 }
 
 .btn-limpar {
     background-color: transparent;
     color: var(--cor-cinza-escuro);
-    text-decoration: underline;
+    text-decoration: underline; /* sublinhando a palavra */
 }
 
 .btn-limpar:hover {
@@ -270,6 +270,26 @@ header {
     min-width: 150px;
 }
 
+.footer-content {
+    background-color: var(--cor-fundo-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer-section {
+    color: var(--cor-legenda);
+    margin-top: 15px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: var(--cor-azul-secundario);
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
     .container-cabecalho {
         font-size: 0.8rem;
@@ -281,11 +301,19 @@ header {
     }
 
     .slogan {
-        visibility: hidden;
+        visibility: hidden; /* pra ocultar quando tela pequena*/
     }
+
     .btn-primario {
-        padding: 8px 30px;
-        text-align: center;
-        text-transform: uppercase;
+    padding: 8px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    }
+
+    .ratio-sexo.input:focus {
+        color: var(--cor-azul-primario);
+    }
+    .ratio-sexo.input:focus {
+        color: var(--cor-azul-primario);
     }
 }

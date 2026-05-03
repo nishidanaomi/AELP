@@ -13,6 +13,7 @@ frm.addEventListener("submit", (e) => {
     const altura = Number(frm.inAltura.value)
     const peso = Number(frm.inPeso.value)
 
+
     let pesoIdeal                                // declara a variável pesoIdeal
     if (Masculino) {                        // se masculino (ou, if === true)
         pesoIdeal = 52 + (0.75 * (altura - 152.4))
