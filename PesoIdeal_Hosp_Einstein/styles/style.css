@@ -29,7 +29,7 @@ header {
     width: 100%; /* a largura que ocupa de 100% da tela*/
     height: 80px; /* a altura */
     background-color: var(--cor-fundo-primario);
-    box-shadow: 0 2px 10px rbga(0,0,0,0.1); /* sombra para dar profundidade: horizintal, vertical, desfoque, cor */
+    box-shadow: 0 2px 10px rbga(0,0,0,0.1); /* sombra para dar profundidade: horizontal, vertical, desfoque, cor */
     z-index: 1000; /* para o header ficar sobreposto, profundidade: acima de tudo */
 }
 
@@ -193,7 +193,13 @@ header {
     position: absolute; /* flutua o elemento */
     margin-top: 4px;
     margin-left: -240px; /* movendo pra direita, achei essa dica no stackoverflow */
+    visibility: hidden;
 }
+
+.radio-sexo input[type="radio"]:checked + label {
+        color: var(--cor-azul-primario);
+        font-weight: 500;
+    }
 
 .campo {
     margin: 15px;
@@ -310,10 +316,34 @@ header {
     text-transform: uppercase;
     }
 
-    .ratio-sexo.input:focus {
-        color: var(--cor-azul-primario);
+    .card-calculadora {
+        max-width: 90%;
     }
-    .ratio-sexo.input:focus {
-        color: var(--cor-azul-primario);
+
+    .radio-sexo input[type="radio"]:checked + label {
+        font-weight: 700;
     }
+
+    .footer-content {
+        position: relative;
+    }
+
+    .footer-section:nth-child(1), /* aqui estou selecionando os dois primeiros filhos (1°p e 2ºp+a) */
+    .footer-section:nth-child(2) {
+        visibility: hidden;
+    }
+
+    .footer-section:nth-child(2) {
+        position: absolute;
+    }
+
+    .footer-section:nth-child(1)::after {
+        content: "Projeto AELP";
+        visibility: visible;
+        position: absolute;
+        left: 50%; /* pra centralizar. aqui move do inicio para o meio */
+        transform: translateX(-50%); /* daqui move 50% da propria largura pra esquerda */
+        white-space: nowrap; /* pra não quebrar em duas linhas */
+    }
+
 }
