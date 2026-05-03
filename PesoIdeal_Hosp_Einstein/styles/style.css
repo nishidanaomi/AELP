@@ -194,7 +194,7 @@ header {
 .radio-sexo input[type=radio] { /* tentando alinhar o input */
     position: absolute; /* flutua o elemento */
     margin-top: 4px;
-    margin-left: -240px; /* movendo pra direita, achei essa dica no stackoverflow */
+    margin-left: -200px; /* movendo pra direita, achei essa dica no stackoverflow */
 }
 
 .radio-sexo input[type="radio"]:checked + label {
