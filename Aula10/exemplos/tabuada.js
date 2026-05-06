@@ -1,5 +1,5 @@
 
-const prompt = require('prompt-sync')({ sigint: true})
+const prompt = require('prompt-sync')({ sigint: true })
 
 // lê o número informado pelo usuário
 const numero = Number(prompt('Informe um número: '))
