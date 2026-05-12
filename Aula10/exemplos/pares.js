@@ -15,6 +15,6 @@ do {
     }
     // a partir do 4, incrementando de 2 em 2
     for (let i = 4; i <= num; i += 2) {
-        pares += ', ' + i
+        pares += `${i} `
     }
     console.log(pares)
