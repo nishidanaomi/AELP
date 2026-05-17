@@ -10,7 +10,7 @@ let a = Number(valores.shift());
 let b = Number(valores.shift());
 let c = Number(valores.shift());
 
-const delta = (b ** 2) - (4 * a * c);
+const delta = (b ** 2) - (4 * a * c);  // no moodle tive que colocar o jeito antigo Math.pow(b, 2)
 
 if (a === 0) {
     console.log("NEESG");
