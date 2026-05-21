@@ -1,15 +1,22 @@
-const prompt = require('prompt-sync')({ sigint: true })
+const prompt = require('prompt-sync')()
 
 const fruta = prompt("Digite o nome da fruta: ")
 const qtd = Number(prompt("Digite a quantidade: "))
-let mensagem = ""
 
-if ( qtd > 0) {
-for (let i = 1; i < qtd; i++) {
-    mensagem = mensagem + fruta + ' * '
-} if
-mensagem = mensagem + fruta
-console.log(mensagem)
+if (qtd < 1) {
+    console.log("Quantidade inválida!")
+} else if (fruta === '') {
+    console.log("Fruta inválida!")
 } else {
-    console.log("Quantidade inválida")
+    let mensagem = fruta
+    for (let i = 2; i <= qtd; i++) {
+        if (i % 5 === 0) {
+            mensagem += ' * ' + fruta + '\n'
+        } else if (i % 5 === 1) {
+            mensagem += fruta
+        } else {
+            mensagem += ' * ' + fruta
+        }
+    }
+    console.log(mensagem)
 }
