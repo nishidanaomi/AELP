@@ -8,16 +8,16 @@ const valores = input.trim().split(/\s+/);
 
 const n = Number(valores.shift());
 
-if( n === 0) {
+if (n === 0) {
     console.log("NULO");
-} else if ( n > 0) {
-    if( n % 2 === 0) {
+} else if (n > 0) {
+    if (n % 2 === 0) {
         console.log("POSITIVO PAR")
     } else {
         console.log("POSITIVO IMPAR")
     }
 } else {
-    if( n % 2 === 0) {
+    if (n % 2 === 0) {
         console.log("NEGATIVO PAR")
     } else {
         console.log("NEGATIVO IMPAR")

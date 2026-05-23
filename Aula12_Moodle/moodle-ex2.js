@@ -10,7 +10,7 @@ const diasDaSemana = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta"
 
 for (let i = 0; i < valores.length; i++) {
     let numDia = Number(valores[i]);
-    let diaPorExtenso = diasDaSemana[numDia -1];
+    let diaPorExtenso = diasDaSemana[numDia - 1];
 
     console.log(diaPorExtenso)
 }

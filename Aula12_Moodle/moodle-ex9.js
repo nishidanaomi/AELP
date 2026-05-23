@@ -19,5 +19,5 @@ if (a + b > c && a + c > b && b + c > a) {
         console.log("Isosceles")
     }
 } else {
-        console.log("Nao eh triangulo")
-    }
+    console.log("Nao eh triangulo")
+}
