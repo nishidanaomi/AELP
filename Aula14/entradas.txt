@@ -1,48 +1,48 @@
-nome: "Ana Silva",
+nome: Ana Silva,
 pontuacaoAcumulada 2850
 idade: 24
 
 
-nome: "Bruno Santos",
+nome: Bruno Santos,
 pontuacaoAcumulada: 2710,
 idade: 31
 
 
-nome: "Carlos Oliveira",
+nome: Carlos Oliveira,
 pontuacaoAcumulada: 2430,
 idade: 19
 
 
-nome: "Daniela Souza",
+nome: Daniela Souza,
 pontuacaoAcumulada: 2430,
 idade: 28
 
 
-nome: "Eduardo Lima",
+nome: Eduardo Lima,
 pontuacaoAcumulada: 2100,
 idade: 42
 
 
-nome: "Fernanda Costa",
+nome: Fernanda Costa,
 pontuacaoAcumulada: 1980,
 idade: 22
 
 
-nome: "Gabriel Rodrigues",
+nome: Gabriel Rodrigues,
 pontuacaoAcumulada: 1850,
 idade: 35
 
 
-nome: "Helena Pereira",
+nome: Helena Pereira,
 pontuacaoAcumulada: 1500,
 idade: 27
 
 
-nome: "Igor Martins",
+nome: Igor Martins,
 pontuacaoAcumulada: 1240,
 idade: 18
 
 
-nome: "Juliana Alves",
+nome: Juliana Alves,
 pontuacaoAcumulada: 950,
 idade: 30
