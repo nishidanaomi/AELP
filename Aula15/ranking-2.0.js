@@ -3,7 +3,7 @@ const prompt = require('prompt-sync')();
 const competidores = [];
 let flag = 0;
 
-console.log("-----------------------");
+console.log("------------------------------------");
 
 while (!flag) {
     let nome;
@@ -40,10 +40,7 @@ while (!flag) {
         }
         break;
     }
-
-    competidores.push({ nome, pontuacao, idade });
-    console.log("-----------------------");
-
+    
     if (competidores.length >= 8) {
         while (!flag) {
             const continuar = prompt("Fazer mais cadastro? (s/n): ");
@@ -54,35 +51,60 @@ while (!flag) {
             }
         }
     }
+
+    competidores.push({ nome, pontuacao, idade });
+    console.log("------------------------------------");
 }
 
 const totalCompetidores = competidores.length;
 
-// reduzir array inteiro em único valor / 0 onde começa contagem / c = cada 1competidor
-//Pega o que já está no cofrinho (soma) e adiciona a pontuação do competidor atual (c.pontuacao)
-const pontSoma = competidores.reduce((soma, c) => soma + c.pontuacao, 0);
+let pontSoma = 0;
+for (let i = 0; i < totalCompetidores; i++) {
+    pontSoma = pontSoma + competidores[i].pontuacao;
+}
 const pontMedia = pontSoma / totalCompetidores;
 
+let maiorNota = competidores[0].pontuacao;
+let menorNota = competidores[0].pontuacao;
+
+for (let i = 1; i < totalCompetidores; i++) {
+    if (competidores[i].pontuacao > maiorNota) {
+        maiorNota = competidores[i].pontuacao;
+    }
+    if (competidores[i].pontuacao < menorNota) {
+        menorNota = competidores[i].pontuacao;
+    }
+}
+
+let nomesVencedores = "";
+let nomesUltimos = "";
 let acimaMedia = 0;
-competidores.forEach((c, i) => {
-    if (c.pontuacao > pontMedia) acimaMedia++;
-    
-    console.log(`Competidor ${i + 1}: ${c.nome}`); // +1 porque a contagem começa do 0
-    console.log(`Pontuação: ${c.pontuacao}`);
-    console.log(`Idade: ${c.idade}`);
-    console.log("------------------------------------");
-});
 
-//... = para fazer copia do array / .sort(.....) = organizar de forma nº cresc comparando pontuação do competidor a com a do competidor b
-const maiorNota = Math.max(...competidores.map(competidor => competidor.pontuacao));
-const vencedores = competidores.filter(competidor => competidor.pontuacao === maiorNota);
-const menorNota = Math.min(...competidores.map(competidor => competidor.pontuacao));
-const ultimos = competidores.filter(competidor => competidor.pontuacao === menorNota);
+for (let i = 0; i < totalCompetidores; i++) {
+if (competidores[i].pontuacao > pontMedia) {
+        acimaMedia = acimaMedia + 1;
+    }
+    if (competidores[i].pontuacao === maiorNota) {
+        if (nomesVencedores === "") {
+            nomesVencedores = competidores[i].nome;
+        } else {
+            nomesVencedores = nomesVencedores + ", " + competidores[i].nome;
+        }
+    }
+    if (competidores[i].pontuacao === menorNota) {
+        if (nomesUltimos === "") {
+            nomesUltimos = competidores[i].nome;
+        } else {
+            nomesUltimos = nomesUltimos + ", " + competidores[i].nome;
+        }
+    }
+}
+let apenasPontos = [];
+for (let i = 0; i < totalCompetidores; i++) {
+    apenasPontos[i] = competidores[i].pontuacao;
+}
+apenasPontos.sort((a, b) => a - b);
 
-const nomesVencedores = vencedores.map(vencedor => vencedor.nome).join(", ");
-const nomesUltimos = ultimos.map(ultimo => ultimo.nome).join(", ");
-
-const apenasPontos = competidores.map(competidor => competidor.pontuacao).sort((a, b) => a - b);
 let pontMediana = 0;
 const numMediana = (totalCompetidores - 1) / 2;
 
