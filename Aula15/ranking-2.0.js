@@ -24,8 +24,13 @@ while (!flag) {
     }
 
     while (!flag) {
-        pontuacao = Number(prompt("Pontuação do competidor: "));
-        if (isNaN(pontuacao) || pontuacao < 0) {
+        inPontuacao = prompt("Pontuação do competidor: ");
+        if ( inPontuacao.trim() === "") {
+            console.log("Pontuação vazia. Digite uma pontuação válida (em número)")
+            continue;
+        }
+        pontuacao = Number(inPontuacao);
+        if (isNaN(pontuacao) || pontuacao < 0 ) {
             console.log("Digite novamente uma pontuação válida (em número).");
             continue;
         }
@@ -80,18 +85,18 @@ let nomesVencedores = "";
 let nomesUltimos = "";
 let acimaMedia = 0;
 
-for (let i = 0; i < totalCompetidores; i++) {
+for (let i = 0; i < totalCompetidores; i++) { // contador de c acima da media
 if (competidores[i].pontuacao > pontMedia) {
         acimaMedia = acimaMedia + 1;
     }
-    if (competidores[i].pontuacao === maiorNota) {
+    if (competidores[i].pontuacao === maiorNota) { // acumulador vencedores
         if (nomesVencedores === "") {
             nomesVencedores = competidores[i].nome;
         } else {
             nomesVencedores = nomesVencedores + ", " + competidores[i].nome;
         }
     }
-    if (competidores[i].pontuacao === menorNota) {
+    if (competidores[i].pontuacao === menorNota) {  // acumulador ultimos
         if (nomesUltimos === "") {
             nomesUltimos = competidores[i].nome;
         } else {
@@ -99,11 +104,11 @@ if (competidores[i].pontuacao > pontMedia) {
         }
     }
 }
-let apenasPontos = [];
+let apenasPontos = [];  // pra ordenar e separar as pont. pra mediana
 for (let i = 0; i < totalCompetidores; i++) {
     apenasPontos[i] = competidores[i].pontuacao;
 }
-apenasPontos.sort((a, b) => a - b);
+apenasPontos.sort((a, b) => a - b);  // ordenação
 
 let pontMediana = 0;
 const numMediana = (totalCompetidores - 1) / 2;
@@ -116,7 +121,7 @@ if (Number.isInteger(numMediana)) {
 
 console.log("**** RESULTADOS DO RANKING LAA ****"  + "\n")
 console.log(`Vencedor(es): ${nomesVencedores} (Nota: ${maiorNota})`);
-console.log(`Último(s) colocado(s): ${nomesUltimos} (Nota: ${menorNota} \n`);
+console.log(`Último(s) colocado(s): ${nomesUltimos} (Nota: ${menorNota}) \n`);
 console.log(`Pontuação média: ${pontMedia.toFixed(2)}`);
 console.log(`Mediana da pontuação: ${pontMediana}`);
 console.log(`Número de competidores acima da média: ${acimaMedia}`);
