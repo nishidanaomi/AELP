@@ -74,18 +74,15 @@ competidores.forEach((c, i) => {
 });
 
 //... = para fazer copia do array / .sort(.....) = organizar de forma nº cresc comparando pontuação do competidor a com a do competidor b
-const maiorNota = Math.max(...competidores.map(c => c.pontuacao));
-const vencedores = competidores.filter(c => c.pontuacao === maiorNota);
-const menorNota = Math.min(...competidores.map(c => c.pontuacao));
-const ultimos = competidores.filter(c => c.pontuacao === menorNota);
+const maiorNota = Math.max(...competidores.map(competidor => competidor.pontuacao));
+const vencedores = competidores.filter(competidor => competidor.pontuacao === maiorNota);
+const menorNota = Math.min(...competidores.map(competidor => competidor.pontuacao));
+const ultimos = competidores.filter(competidor => competidor.pontuacao === menorNota);
 
-//const ordenadosPorPontos = [...competidores].sort((a, b) => a.pontuacao - b.pontuacao);
-const nomesVencedores = vencedores.map(v => v.nome).join(", ");
-const nomesUltimos = ultimos.map(u => u.nome).join(", ");
-// const nomesVencedores = ordenadosPorPontos[totalCompetidores - 1].nome;
-// const nomesUltimos = ordenadosPorPontos[0].nome;
+const nomesVencedores = vencedores.map(vencedor => vencedor.nome).join(", ");
+const nomesUltimos = ultimos.map(ultimo => ultimo.nome).join(", ");
 
-const apenasPontos = competidores.map(c => c.pontuacao).sort((a, b) => a - b);
+const apenasPontos = competidores.map(competidor => competidor.pontuacao).sort((a, b) => a - b);
 let pontMediana = 0;
 const numMediana = (totalCompetidores - 1) / 2;
 
