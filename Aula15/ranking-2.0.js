@@ -119,9 +119,18 @@ if (Number.isInteger(numMediana)) {
     pontMediana = (apenasPontos[Math.ceil(numMediana)] + apenasPontos[Math.floor(numMediana)]) / 2;
 }
 
-console.log("**** RESULTADOS DO RANKING LAA ****"  + "\n")
+console.log("**** RESULTADOS DO RANKING - LAA ****"  + "\n")
 console.log(`Vencedor(es): ${nomesVencedores} (Nota: ${maiorNota})`);
 console.log(`Último(s) colocado(s): ${nomesUltimos} (Nota: ${menorNota}) \n`);
 console.log(`Pontuação média: ${pontMedia.toFixed(2)}`);
 console.log(`Mediana da pontuação: ${pontMediana}`);
 console.log(`Número de competidores acima da média: ${acimaMedia}`);
+
+console.log("\n" + "**** RANKING DE COMPETIDORES - LAA ****"  + "\n")
+
+let ranking = [...competidores];
+ranking.sort((a, b) => b.pontuacao - a.pontuacao);  // ordenando do maior pro menor
+
+for (let i = 0; i < ranking.length; i++) {
+    console.log(`${i + 1}º Lugar: ${ranking[i].nome} - Pontuação: ${ranking[i].pontuacao}`);
+}
