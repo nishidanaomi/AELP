@@ -1,6 +1,7 @@
 const prompt = require('prompt-sync')();
 
 const competidores = [];
+const registroRodadas = [];
 let flag = 0;
 
 console.log("------------------------------------");
@@ -59,7 +60,13 @@ while (!flag) {
 
     competidores.push({ nome, pontuacao, idade });
     console.log("------------------------------------");
-}
+
+    let horarioAtual = new Date().toLocaleTimeString();
+    registroRodadas.push({
+        hora: horarioAtual,
+        descricao: `Competidor: ${nome} | Pontuação: ${pontuacao} | Idade: ${idade}`
+    });
+console.log("------------------------------------")
 
 const totalCompetidores = competidores.length;
 
@@ -126,6 +133,12 @@ console.log(`Pontuação média: ${pontMedia.toFixed(2)}`);
 console.log(`Mediana da pontuação: ${pontMediana}`);
 console.log(`Número de competidores acima da média: ${acimaMedia}`);
 
+console.log("\n" + "**** REGISTRO TEMPORAL DAS RODADAS ****" +"\n");
+for (let i= 0; i < registroRodadas.length; i++) {
+    console.log(`[${registroRodadas[i].hora}] Rodada: ${i +1} -> ${registroRodadas[i].descricao}` + "\n");
+}
+console.log("------------------------------------")
+
 console.log("\n" + "**** RANKING DE COMPETIDORES - LAA ****"  + "\n")
 
 let ranking = [...competidores];
@@ -133,4 +146,5 @@ ranking.sort((a, b) => b.pontuacao - a.pontuacao);  // ordenando do maior pro me
 
 for (let i = 0; i < ranking.length; i++) {
     console.log(`${i + 1}º Lugar: ${ranking[i].nome} - Pontuação: ${ranking[i].pontuacao}`);
+}
 }
