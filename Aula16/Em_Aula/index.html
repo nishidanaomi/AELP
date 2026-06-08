@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+  Página HTML do ranking da LAA — Marco 3.
+  Em relação ao Marco 2, esta "casca" ganhou UMA coisa: o painel de cadastro
+  (os campos de digitar + o botão). O resto continua igual: a tabela e as métricas
+  são preenchidas por ranking.js. A novidade do Marco 3 é que agora a página REAGE
+  ao clique do botão. Vocês não precisam reescrever este arquivo; precisam
+  ENTENDÊ-LO, em especial os id="" — é por eles que o ranking.js encontra os campos.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAA: Ranking de Competidores</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div class="container">
+
+    <header class="cabecalho">
+      <h1>Liga Acadêmica de Algoritmos</h1>
+      <span id="carimbo" class="carimbo"></span>
+    </header>
+
+    <!-- PAINEL DE CADASTRO (novo no Marco 3).
+         Cada campo tem um id: é assim que o ranking.js lê o que foi digitado, com
+         document.getElementById("campo-nome").value  (e o mesmo para os outros).
+         O botão tem id="btn-adicionar": o TODO 1 liga este botão ao clique. -->
+    <section class="cadastro">
+      <h2 class="cadastro-titulo">Adicionar competidor</h2>
+      <div class="cadastro-campos">
+        <input id="campo-nome" type="text" placeholder="Nome" class="campo">
+        <input id="campo-pontuacao" type="number" placeholder="Pontuação" class="campo">
+        <input id="campo-idade" type="number" placeholder="Idade" class="campo">
+        <button id="btn-adicionar" class="botao">Adicionar</button>
+      </div>
+      <!-- id="aviso": encaixe para mensagens de validação (ex.: "preencha os campos"). -->
+      <p id="aviso" class="aviso"></p>
+    </section>
+
+    <!-- id="metricas": encaixe das métricas. Refeito a cada renderização. -->
+    <section id="metricas" class="metricas"></section>
+
+    <!-- Tabela do ranking. O <thead> é fixo; o <tbody id="corpo-ranking"> é refeito
+         a cada clique, dentro da função renderizar() do ranking.js. -->
+    <table class="ranking">
+      <thead>
+        <tr>
+          <th>Posição</th>
+          <th>Competidor</th>
+          <th>Pontuação</th>
+          <th>Idade</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-ranking"></tbody>
+    </table>
+  </div>
+
+  <!-- O <script> fica no fim do corpo: assim, quando o ranking.js roda, os
+       elementos acima (campos, botão, tabela) já existem e podem ser encontrados. -->
+  <script src="ranking.js"></script>
+</body>
+</html>
