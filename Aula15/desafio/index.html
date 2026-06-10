@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+ 
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LAA: Ranking de Competidores</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header class="cabecalho">
+      <h1>Liga Acadêmica de Algoritmos</h1>
+      <span id="carimbo" class="carimbo"></span>
+    <button class="botao" id="btn-atualizar">Atualizar Ranking</button>
+    </header>
+
+    <section class="formulario-cadastro">
+      <h3>Cadastrar Novo Competidor</h3>
+      <div class="campos-grupo">
+        <input type="text" id="input-nome" placeholder="Nome do competidor">
+        <input type="number" id="input-pontos" placeholder="Pontos">
+        <input type="number" id="input-idade" placeholder="Idade">
+        <button class="botao" id="btn-adicionar">Adicionar</button>
+      </div>
+    </section>
+
+    <section id="metricas" class="metricas"></section>
+    <div id="espaco-podio"></div>
+
+    <table class="ranking">
+      <thead>
+        <tr>
+          <th>Posição</th>
+          <th>Competidor</th>
+          <th>Pontuação</th>
+          <th>Idade</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-ranking">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
