@@ -1,0 +1,215 @@
+/*
+ * Projeto LAA: Sistema de Ranking
+ * Folha de estilo do cliente (design system da Liga Acadêmica de Algoritmos).
+ *
+ * Entregue pronta pela Coordenação da LAA. Nesta disciplina, CSS é conteúdo de
+ * LEITURA, não de produção: vocês não precisam escrever CSS, mas devem conseguir
+ * LER e explicar o que cada regra faz (a arguição pode perguntar isto). Em relação
+ * ao Marco 2, esta versão acrescenta o painel de cadastro (.cadastro e .campo).
+ *
+ * Como ler uma regra de CSS:
+ *
+ *     seletor {               <-- a QUEM o estilo se aplica
+ *       propriedade: valor;   <-- O QUE muda na aparência
+ *     }
+ */
+
+/* Tokens de cor do cliente. Guardar a cor numa variável (--nome) permite
+   reutilizá-la com var(--nome) e trocá-la num ponto só. */
+:root {
+  --laa-navy: #1F3864;   /* títulos e cabeçalho da tabela */
+  --laa-azul: #2E5395;   /* destaques secundários */
+  --laa-cinza: #595959;  /* texto de apoio */
+  --laa-fundo: #F4F6FB;  /* fundo da página */
+  --laa-linha: #E0E4EC;  /* divisórias e bordas suaves */
+  --laa-ouro: #C9A227;   /* primeiro lugar no pódio */
+}
+
+/* "body" pega o corpo inteiro da página: fonte, cor do texto e fundo. */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1A1A1A;
+  background-color: var(--laa-fundo);
+  margin: 0;
+  padding: 24px;
+  line-height: 1.5;
+}
+
+/* ".container" centraliza (margin: 0 auto) e limita a largura. */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho: título à esquerda e carimbo temporal à direita. */
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 3px solid var(--laa-navy);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.cabecalho h1 {
+  color: var(--laa-navy);
+  font-size: 26px;
+  margin: 0;
+}
+
+/* ".carimbo" pega o <span id="carimbo">: data e hora, em cinza e menor. */
+.carimbo {
+  color: var(--laa-cinza);
+  font-size: 14px;
+}
+
+/* PAINEL DE CADASTRO (novo no Marco 3): a "caixa" branca do formulário. */
+.cadastro {
+  background-color: #FFFFFF;
+  border: 1px solid var(--laa-linha);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+/* Título do painel de cadastro. */
+.cadastro-titulo {
+  color: var(--laa-navy);
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+/* ".cadastro-campos": coloca os campos e o botão lado a lado (display: flex) e
+   permite a quebra de linha em telas estreitas (flex-wrap, compatível com celular). */
+.cadastro-campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ".campo" pega cada <input class="campo">: borda suave e espaçamento interno. */
+.campo {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 1px solid var(--laa-linha);
+  border-radius: 6px;
+}
+
+/* ":focus" aplica o estilo quando o campo está selecionado (o cursor está nele). */
+.campo:focus {
+  outline: 2px solid var(--laa-azul);
+  border-color: var(--laa-azul);
+}
+
+/* ".aviso" pega o <p id="aviso">: mensagem de validação, em vermelho.
+   min-height reserva a altura para o layout não "pular" quando o texto aparece. */
+.aviso {
+  color: #C62828;
+  font-size: 14px;
+  min-height: 18px;
+  margin: 8px 0 0;
+}
+
+/* Painel de métricas (média, vencedor, último colocado, etc.). */
+.metricas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--laa-linha);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.metricas p {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* "strong" (negrito) dentro das métricas recebe a cor de destaque. */
+.metricas strong {
+  color: var(--laa-azul);
+}
+
+/* ".ranking" pega a <table class="ranking">. border-collapse une as bordas das
+   células numa linha só (sem o efeito de "borda dupla"). */
+.ranking {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border: 1px solid var(--laa-linha);
+}
+
+/* Células de cabeçalho (<th> no <thead>): fundo escuro, texto branco. */
+.ranking thead th {
+  background-color: var(--laa-navy);
+  color: #FFFFFF;
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+/* Células de dado (<td> no <tbody>): espaçamento interno e linha superior. */
+.ranking tbody td {
+  padding: 9px 12px;
+  border-top: 1px solid var(--laa-linha);
+  font-size: 15px;
+}
+
+/* Efeito "zebra": tr:nth-child(even) seleciona as linhas PARES e dá a elas um
+   fundo levemente diferente, para facilitar a leitura linha a linha. */
+.ranking tbody tr:nth-child(even) {
+  background-color: #F7F9FC;
+}
+
+/* "td:first-child" seleciona a PRIMEIRA célula de cada linha (a coluna Posição). */
+.ranking tbody td:first-child {
+  font-weight: bold;
+  color: var(--laa-azul);
+  width: 72px;
+}
+
+/* Pódio (backlog opcional): destaque para os três primeiros colocados.
+   Só tem efeito se a equipe criar os elementos com estas classes no HTML. */
+.podio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.podio .lugar {
+  flex: 1 1 160px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--laa-linha);
+  border-top: 4px solid var(--laa-cinza);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.podio .primeiro {
+  border-top-color: var(--laa-ouro);
+}
+
+/* ".botao" pega o <button class="botao">: o botão de cadastro do Marco 3.
+   cursor: pointer mostra a "mãozinha" ao passar o mouse. */
+.botao {
+  font-family: inherit;
+  font-size: 15px;
+  color: #FFFFFF;
+  background-color: var(--laa-azul);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+/* ":hover" aplica o estilo quando o ponteiro do mouse está sobre o botão. */
+.botao:hover {
+  background-color: var(--laa-navy);
+}
