@@ -11,7 +11,15 @@ let flag = 0;
 console.log("-----------------------")
 
 while (!flag) {
-    nome[cadastrado] = prompt("Nome do competidor: ");
+        while (!flag) {
+        nome[cadastrado] = prompt("Nome do competidor: ").trim();
+        if ( nome[cadastrado] === "") {
+            console.log("Digite novamente um nome válido")
+            continue;
+        } else {
+            break;
+        }
+    }
     while (!flag) {
         pontuacao[cadastrado] = Number(prompt("Pontuação do competidor: "));
         if (isNaN(pontuacao[cadastrado]) === true || pontuacao[cadastrado] < 0) {
