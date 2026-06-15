@@ -114,11 +114,6 @@ body {
   border-top-color: var(--laa-ouro);
 }
 
-.acima-media{
-  color: var(--laa-ouro);
-  font-weight: 500;
-}
-
 .botao {
   font-family: inherit;
   font-size: 15px;

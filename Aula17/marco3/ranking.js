@@ -46,7 +46,7 @@ function montarLinhas(lista) {
     const c = lista[i];
     const posicao = i + 1;
     linhas += `<tr><td>${posicao}º</td><td>${escaparHTML(c.nome)}</td><td>${c.pontuacao}</td><td>${c.idade}</td>
-               <td><button id="btn-remover" class="botao" onclick="removerCompetidor(${i})">Remover</button></td></tr>`;
+               <td><button class="btn-remover" class="botao" onclick="removerCompetidor(${i})">Remover</button></td></tr>`;
   }
   return linhas;
 }
@@ -94,12 +94,15 @@ function adicionarCompetidor() {
   const getNome = document.getElementById("campo-nome").value.trim();
   const getPontuacao = Number(document.getElementById("campo-pontuacao").value.trim());
   const getIdade = Number(document.getElementById("campo-idade").value.trim());
+  const regex = /^[\p{L}'\s-]+$/u;
 
   if (getNome === "" || getPontuacao === "" || getIdade === "") {
     aviso.textContent = "Preecha o(s) campo(s)";
+  } else if ( !regex.test(getNome) ) {
+    aviso.textContent = "Nome inválido. Use apenas letras."
   } else if (isNaN(getPontuacao) || getPontuacao < 0 ) { 
     aviso.textContent = "Número(s) inválido(s)"
-  } else if ( getIdade < 14 || getIdade > 60 || isNaN(getIdade)) {
+  } else if ( isNaN(getIdade) || getIdade < 14 || getIdade > 60 ) {
     aviso.textContent = "Idade não permitida ou inválida" 
   } else {
     competidores.push({ nome: getNome, pontuacao: getPontuacao, idade: getIdade });
