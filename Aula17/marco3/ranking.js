@@ -46,7 +46,7 @@ function montarLinhas(lista) {
     const c = lista[i];
     const posicao = i + 1;
     linhas += `<tr><td>${posicao}º</td><td>${escaparHTML(c.nome)}</td><td>${c.pontuacao}</td><td>${c.idade}</td>
-               <td><button class="btn-remover" class="botao" onclick="removerCompetidor(${i})">Remover</button></td></tr>`;
+               <td><button class="botao" onclick="removerCompetidor(${i})">Remover</button></td></tr>`;
   }
   return linhas;
 }
