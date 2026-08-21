@@ -1,13 +1,12 @@
-          
-                
-   # Algoritmos e Lógica de Programação [2026-1]
+# Algoritmos e Lógica de Programação (AELP) [2026-1]
+## Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, IFSP Campus Salto
 
 ---
 > Repositório destinado aos estudos e exercícios da disciplina de AELP do curso de **Técnico em Informática para Internet** no **IFSP**.  
 
  Material de exercicios de AELP (Algoritmos e Lógica de Programação) - Primeiro semestre de 2026  
 Tec. Informática da Internet - IFSP (Instituto Federal de Educação, Ciência e Tecnologia de São Paulo).  
-Com Prof. Me. Francisco Diego Garrido da Silva.   
+Docente Prof. Me. Francisco Diego Garrido da Silva.   
 _Em outras palavras esse é meu "caderno digital" da escola._  
 
 
@@ -15,7 +14,7 @@ _Em outras palavras esse é meu "caderno digital" da escola._
   ---
   
  ## Status  
-  ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green)
+  ![Status](https://img.shields.io/badge/Status-Desenvolvido-green)
 
   ---
 
